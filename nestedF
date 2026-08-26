@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+/*
+int main()
+
+{
+    int c;
+    c = calculate();     //function calling
+
+    cout<<"the sum of two nos"<<c;
+    return 0;
+
+}
+
+int calculate()   //function declaration
+{
+   int a,b,c;
+   cin>>a>>b>>c;
+   c = sum(a,b);         
+   return c;
+
+
+}
+
+
+]
+
+/*
+ 
+int sum (int a,int b)     //FUNCTION DEFINATION
+{
+return (a+b);
+
+}
+
+
+
+*/
+
+
+
