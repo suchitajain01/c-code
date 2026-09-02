@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+/*polymorphism two types
+ compile type polymorphism 
+
+1.1 -function overloading
+1.2 -operator overloading
+
+
+runtime polymorphism
+2.1 - virtual functions
+
+*/
+
+
