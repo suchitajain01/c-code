@@ -17,7 +17,7 @@ class Stack{
     //PUSH OPERATION
     void Push(int x){  
         if(Top==item.size()-1){     
-            cout<<"Stack Overflows"<<endl;
+            cout<<"Stack Overflows"<<endl; //no more entries to be filled in the stack 
             return;
         }
         else{
@@ -31,7 +31,7 @@ class Stack{
     //POP OPERATION
     int Pop(){
         if(Top==-1){
-            cout<<"Stack Underflows"<<endl;
+            cout<<"Stack Underflows"<<endl; //no more entries to be removed from the stack
             return -1;
         }
         else{

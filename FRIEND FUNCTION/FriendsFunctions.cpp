@@ -11,6 +11,7 @@ class Complex
     b = n2;
   }
    
+  //PARAMETERS INSIDE FRIEND FUNCTION ARE OBJECTS OF THE CLASS 
   friend Complex sumComplex(Complex o1, Complex o2);
   //this allows function to access private data members of class complex
   void printNumber()
