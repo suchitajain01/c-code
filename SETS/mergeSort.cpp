@@ -32,18 +32,23 @@ void Merge(vector<int> A, int low, int mid, int high)
         }
     }
 
-    while (i <= mid)
+    while (i <= mid) //if any element left 
+    {
+        C[k] = A[i];
+        j++;
+        k++;
+    }
+
+    while (j <= high)
     {
         C[k] = A[j];
         j++;
         k++;
     }
 
-    while (j <= mid)
+     for (int i = low; i <= high; i++)
     {
-        C[k] = A[j];
-        j++;
-        k++;
+        A[i] = C[i];
     }
 }
 void MergeSort(vector<int> A, int low, int high)
