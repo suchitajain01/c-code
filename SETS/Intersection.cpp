@@ -1,67 +1,54 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-vector<int> intersectionArray(vector<int>&A, vector<int>&B, int m, int n)
+vector<int> intersectionArray(vector<int>& A, vector<int>& B, int m, int n)
 {
-vector<int> C;
-    int i =0, j = 0, k =0;
+    vector<int> C;
 
-    while( i <=m && j<=n)
+    int i = 0, j = 0;
+
+    while (i <= m && j <= n)
     {
-
-        if(A[i] < B[j])
+        if (A[i] < B[j])
+        {
+            i++;
+        }
+        else if (B[j] < A[i])
+        {
+            j++;
+        }
+        else
         {
             C.push_back(A[i]);
-         i++; 
-
+            i++;
+            j++;
         }
-
-     else if(B[j]<A[i])
-     {
-        C.push_back(B[j]);
-        j++;
-     }
-
-     else
-
-     {
-          C[k] = A[i];
-          i++;
-          j++;
-          k++;
-
-     }
-
-
     }
+
     return C;
-
-
-};
+}
 
 int main()
 {
-vector<int>A;
-vector<int>B;
-vector<int>C;
-A.push_back(10);
-A.push_back(20);
-A.push_back(30);
-A.push_back(40);
+    vector<int> A;
+    vector<int> B;
 
-B.push_back(10);
-B.push_back(50);
-B.push_back(40);
-A.push_back(70);
+    A.push_back(10);
+    A.push_back(20);
+    A.push_back(30);
+    A.push_back(40);
 
-intersectionArray(A,B,3,3);
-vector<int>C;
+    B.push_back(10);
+    B.push_back(50);
+    B.push_back(40);
+    B.push_back(70);
 
-for(int i =0;i< C.size();i++)
-{
-    cout<<C[i]<< " "<<endl;
+    vector<int> C = intersectionArray(A, B, 3, 3);
+
+    for (int i = 0; i < C.size(); i++)
+    {
+        cout << C[i] << " ";
+    }
+
+    return 0;
 }
-
-
-}
-

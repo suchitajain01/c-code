@@ -72,10 +72,7 @@ for (int i = 0; i < m; i++)
     {
         cin >> B[j];
     }
-
-     SymmetricdifferenceSet(A,m,n,B);
-     vector<int>C;
-
+    vector<int> C = SymmetricdifferenceSet(A, m, n, B);
      for(int i =0;i<C.size();i++)
      {
 

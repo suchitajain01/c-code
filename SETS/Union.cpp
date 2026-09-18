@@ -3,7 +3,6 @@ using namespace std;
 
 void UnionArray(vector<int> &A, int m, int n, vector<int> &B,vector<int>&C)
 {
-    vector<int> C;
 
     int i = 0, j = 0, k = 0;
 
