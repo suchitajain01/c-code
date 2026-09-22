@@ -7,7 +7,7 @@ vector<int> intersectionArray(vector<int>& A, vector<int>& B, int m, int n)
 
     int i = 0, j = 0;
 
-    while (i <= m && j <= n)
+    while (i < m && j <n)
     {
         if (A[i] < B[j])
         {
@@ -19,7 +19,7 @@ vector<int> intersectionArray(vector<int>& A, vector<int>& B, int m, int n)
         }
         else
         {
-            C.push_back(A[i]);
+            C.push_back(A[i]); //IF ELEMENTS SAME THEN ONLY PUSH 
             i++;
             j++;
         }

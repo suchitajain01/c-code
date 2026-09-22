@@ -12,13 +12,14 @@ void Merge(vector<int> &A,vector<int> &B, int m, int n)
         {
             C.push_back(A[i]);
             i++;
+            k++;
         }
 
         else
 
         {
 
-            C[k] = A[j];
+            C.push_back(B[j]);
             j++;
             k++;
         }

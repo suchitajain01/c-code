@@ -3,103 +3,103 @@ using namespace std;
 
 struct node
 {
- int data;
- struct node *next;
-
-
+    int data;
+    node *next;
 };
 
-node *GetNode()
+// Create a new node
+node *GetNode(int x)
 {
-    int x;
-    node *PQ;
+    node *PQ = new node;
     PQ->data = x;
+    PQ->next = NULL;
 
+    return PQ;
+}
 
-
-
-};
-
-
+// Dequeue from front
 node *DeQueue(node *PQ)
 {
-  if(PQ == NULL)
-  {
-    cout<<"Queue underflows";
-    exit(1);
+    if (PQ == NULL)
+    {
+        cout << "Queue Underflows" << endl;
+        exit(1);
+    }
 
-  }
+    node *p;
+    p = PQ;
 
-  node *p;
-  p = PQ;
-  int x = p->data;
-  PQ=PQ->next;
-  delete(p);
+    int x = p->data;
+    cout << "Dequeued element: " << x << endl;
 
+    PQ = PQ->next;
 
+    delete p;
 
-
+    return PQ;
 }
+
+// Enqueue at rear
+node *EnQueue(node *PQ, int x)
 {
-   if(PQ == NULL)
-   {
-    cout<<"Queue Undeflows";
-    exit(1);
-   }
+    node *curr, *prev;
 
-   node *p;
-   p = PQ;
-   int x = p->data;
-   cout<<"Dequeued element:"<<x<<" "<<endl;
+    curr = PQ;
+    prev = NULL;
 
+    node *R;
+    R = GetNode(x);
 
-};
+    // If queue is empty
+    if (PQ == NULL)
+    {
+        return R;
+    }
 
+    // Move to the last node
+    while (curr != NULL)
+    {
+        prev = curr;
+        curr = curr->next;
+    }
 
-node *Enqueue (node *PQ)
-{
-node *curr, *prev;
-curr = PQ;
-prev = NULL;
-node* R;
-R = GetNode();
-R->data = x;
+    // Insert new node at the end
+    prev->next = R;
 
-
-if(prev == NULL)
-{}
-
-
-};
-
+    return PQ;
+}
 
 int main()
 {
-node *PQ;
-PQ= NULL;
-PQ = EnQueue(PQ,10);
-PQ = EnQueue(PQ,20);
-PQ = EnQueue(PQ,30);
-PQ = EnQueue(PQ,40;
-PQ = EnQueue(PQ,50);
+    node *PQ;
+    PQ = NULL;
 
+    PQ = EnQueue(PQ, 10);
+    PQ = EnQueue(PQ, 20);
+    PQ = EnQueue(PQ, 30);
+    PQ = EnQueue(PQ, 40);
+    PQ = EnQueue(PQ, 50);
 
+    // Display queue
+    node *p = PQ;
 
-node* p = PQ;
-while(p!=NULL)
-{
-    cout<<p->data<<",";
-    p = p->next;
-}
+    while (p != NULL)
+    {
+        cout << p->data << ",";
+        p = p->next;
+    }
 
+    cout << endl << endl;
 
-cout<<endl<<endl;
-PQ = DeQueue(PQ);
-PQ = DeQueue(PQ);
-PQ = DeQueue(PQ);
-PQ = DeQueue(PQ);
-PQ = DeQueue(PQ);
-PQ = DeQueue(PQ);
+    // Dequeue
+    PQ = DeQueue(PQ);
+    PQ = DeQueue(PQ);
+    PQ = DeQueue(PQ);
+    PQ = DeQueue(PQ);
+    PQ = DeQueue(PQ);
 
-return 0;
+    // One more dequeue -> underflow
+    PQ = DeQueue(PQ);
+
+    return 0;
 }

@@ -35,7 +35,7 @@ void Merge(vector<int> A, int low, int mid, int high)
     while (i <= mid) //if any element left 
     {
         C[k] = A[i];
-        j++;
+        i++;
         k++;
     }
 
@@ -58,9 +58,9 @@ void MergeSort(vector<int> A, int low, int high)
 
     {
         int mid = (low + high) / 2;
-        MergeSort(A, low, mid);
-        MergeSort(A, mid + 1, high);
-        Merge(A, low, mid, high);
+        MergeSort(A, low, mid);  //FIRST HALF KI SORTING HOGI PEHLE
+        MergeSort(A, mid + 1, high); //SECOND HALF KI SORTING HOGI THEN
+        Merge(A, low, mid, high); //MERGE
     }
 }
 
