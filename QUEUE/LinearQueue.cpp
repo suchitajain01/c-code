@@ -20,9 +20,11 @@ public:
         if (front == -1) {
             front = 0;
         }
-
-        rear++;
+       else
+       {
+                rear++;
         arr[rear] = value;
+        }
 
         cout << value << " inserted\n";
     }
